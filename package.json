@@ -1,0 +1,11 @@
+{
+  "name": "chris-photos",
+  "version": "0.1",
+  "author": "RouNdeL",
+  "license": "MIT",
+  "dependencies": {
+    "prompt-confirm": "^1.2.0",
+    "request": "^2.83.0",
+    "shelljs": "^0.7.8"
+  }
+}
