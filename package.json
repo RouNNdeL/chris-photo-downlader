@@ -6,6 +6,7 @@
   "dependencies": {
     "prompt-confirm": "^1.2.0",
     "request": "^2.83.0",
-    "shelljs": "^0.7.8"
+    "shelljs": "^0.7.8",
+    "yargs": "^10.0.3"
   }
 }

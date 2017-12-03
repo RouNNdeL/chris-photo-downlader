@@ -83,7 +83,7 @@ async function execute(url, path)
     if(Object.keys(albumIds).length === 0)
     {
         console.error("The provided URL doesn't seem to be valid. Please try a different one.\n" +
-            "(Error: unable to find albumId");
+            "(Error: unable to find albumId)");
         process.exit(-2);
     }
     console.log("Got "+Object.keys(albumIds).length+" album id"+(Object.keys(albumIds).length > 1 ? "s" : "")+"\n");

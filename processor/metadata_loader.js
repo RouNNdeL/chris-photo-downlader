@@ -62,9 +62,6 @@ async function generateDirName(url)
 {
     const texts = await getMetadataTextsFromUrl(url);
 
-    if(texts["photo[day]"] === undefined)
-        throw new Error("Day is missing");
-
     if(texts["photo[turnus]"] !== undefined)
     {
         return texts["photo[turnus]"] + "/" + texts["photo[day]"];
@@ -73,7 +70,7 @@ async function generateDirName(url)
     {
         return texts["photo[camp]"]+" "+texts["photo[year]"]+"/"+texts["photo[day]"];
     }
-    return null;
+    throw new Error("Error: Cannot generate directory name");
 }
 
 async function getDays(url)
@@ -99,5 +96,13 @@ async function getDays(url)
     return days;
 }
 
+function isDay(url)
+{
+    const params = getMetadataParams(url);
+    return params.hasOwnProperty("photo[day]");
+
+}
+
 module.exports.generateDirName = generateDirName;
 module.exports.getDays = getDays;
+module.exports.isDay = isDay;
